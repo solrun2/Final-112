@@ -12,4 +12,3 @@ s = input().lower()
 ans = remove_duplicates(sorted(bigram(s)))
 for i in ans :
     print(i)
-
