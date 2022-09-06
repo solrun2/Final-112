@@ -1,5 +1,4 @@
 def closestNum(list) :
-    i = -1
     distance = max(list) - min(list)
     for j in range(len(list)-1) :
         if abs(list[j] - list[j+1]) < distance :
