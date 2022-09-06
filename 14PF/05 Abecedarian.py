@@ -4,9 +4,11 @@ def abecedarianCount(word):
         if word[i] <= word[i+1]:
             count += 1
         else :
-            count += 1
             break
+    count += 1
     return count
-
 text = input()
-print(abecedarianCount(text))
+if text.isspace() :
+    print(0)
+else :
+    print(abecedarianCount(text))
