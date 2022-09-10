@@ -1,41 +1,15 @@
-card = input().split()
-point = []
+card = [i for i in input().split()]
+faceCard = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+cardPoint = [1,2,3,4,5,6,7,8,9,10,10,10,10]
+bigPoint = 0
+score = 0
 for i in card :
-    if i == "A" :
-        point.append(1)
-    elif i == "J" or i == "Q" or i == "K" :
-        point.append(10)
-    else :
-        point.append(int(i))
-allpoint = 0
-cnt = 0
-for i in point :
-    if allpoint >= 16 :
-        break
-    cnt += 1
-    allpoint += i
-if allpoint > 21 :
-    ans = "busted"
+    if score <= 16 :
+        if faceCard.index(i) > bigPoint :
+            bigPoint = faceCard.index(i)
+        score += cardPoint[faceCard.index(i)]
+print(faceCard[bigPoint])
+if score > 21 :
+    print("busted")
 else :
-    ans = allpoint
-maxpoint = ""
-numpoint = 0
-for i in card[:cnt] :
-    if i == "K" :
-        maxpoint = "K"
-        numpoint = 10
-    elif i == "Q" :
-        maxpoint = "Q"
-        numpoint = 10
-    elif i == "J" :
-        maxpoint = "J"
-        numpoint = 10
-    elif i == "A" :
-        continue
-    elif 2 <= int(i) <= 10 :
-        if int(i) > numpoint :
-            maxpoint = i
-            numpoint = int(i)
-print(maxpoint)
-print(ans)
-    
+    print(score)
