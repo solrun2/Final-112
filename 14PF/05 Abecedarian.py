@@ -1,14 +1,11 @@
-def abecedarianCount(word):
-    count = 0
-    for i in range(len(word)-1):
-        if word[i] <= word[i+1]:
-            count += 1
-        else :
-            count += 1
-            break
-    return count
-text = input()
-if text.isspace() :
-    print(0)
-else :
-    print(abecedarianCount(text))
+text = input().lower()
+text = text + "`"
+a = "`"
+cnt = 0
+for i in text :
+    if i > a :
+        cnt += 1
+        a = i
+    else :
+        print(cnt)
+        break

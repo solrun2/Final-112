@@ -1,5 +1,4 @@
 score = []
-score_times = [0]*11
 i = 0
 while i < 20 :
     n = int(input("Enter score: "))
@@ -7,10 +6,9 @@ while i < 20 :
         print("Score is out of range.")
         continue
     score.append(n)
-    score_times[n] += 1
     i += 1
 print("Original list:")
 print(score)
 for i in range(11) :
     print("{:2d}".format(i) ,end = "")
-    print(" "+"*"*score_times[i])
+    print(" "+"*"*score.count(i))
