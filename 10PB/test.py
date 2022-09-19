@@ -1,5 +1,5 @@
 t = input().lower()
-ls = list(t)
+l = len(t)
 count = 0
 while True:
   g = input().lower()
@@ -7,12 +7,9 @@ while True:
     if g == '0':
       break
   
-    elif g in ls:
-      if ls.count(g) > 1:
-        count += ls.count(g)
-        while g in ls:  
-          ls.remove(g)
-      elif ls.count(g) == 1:
-        count += 1
+    if g in t:
+      count += t.count(g)
+      t = t.replace(g,'')
+      print(t,count)
 
-print(f'{count}/{len(t)}')
+print(f'{count}/{l}')
