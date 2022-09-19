@@ -4,7 +4,7 @@ while True :
     guess = input()
     if guess == "0" :
         break
-    if guess not in text :
+    if guess in text :
         text = text.replace(guess, "")
 restLen = allLen - len(text)
 print("{}/{}".format(restLen, allLen))
