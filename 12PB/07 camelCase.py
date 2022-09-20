@@ -1,0 +1,8 @@
+s = input().strip()
+s = " ".join(s.split("_"))
+s = " ".join(s.split("."))
+s = " ".join(s.split("="))
+s = " ".join(s.split("-"))
+s = " ".join(s.split("$"))
+s = s.split()
+print(s[0].lower() + "".join([i.capitalize() for i in s[1:]]))

@@ -6,11 +6,11 @@ if "." in text :
     else :
         name = text[0]
     if len(text[1]) > 3 :
-        surname = text[1][:3]
+        extension = text[1][:3]
     else :
-        surname = text[1]
+        extension = text[1]
 else :
-    surname = -1
+    extension = -1
     if len(text) > 15 :
         name = text[:15]
     else :
@@ -21,13 +21,13 @@ for i in name :
         new_name += "_"
     else :
         new_name += i
-if type(surname) == int :
+if type(extension) == int :
     print(new_name)
 else :
-    new_surname = ""
-    for i in surname :
+    new_extension = ""
+    for i in extension :
         if i in '\/*:|"<>. ' :
-            new_surname += "_"
+            new_extension += "_"
         else :
-            new_surname += i    
-    print(new_name+"."+new_surname)
+            new_extension += i    
+    print(new_name+"."+new_extension)
