@@ -1,8 +1,5 @@
 s = input().strip()
-s = " ".join(s.split("_"))
-s = " ".join(s.split("."))
-s = " ".join(s.split("="))
-s = " ".join(s.split("-"))
-s = " ".join(s.split("$"))
-s = s.split()
+for i in "-=_.$" :
+    s = s.replace(i," ")
+s = s.strip().split(" ")
 print(s[0].lower() + "".join([i.capitalize() for i in s[1:]]))
