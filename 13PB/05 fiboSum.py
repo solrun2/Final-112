@@ -8,16 +8,16 @@ def fibo(n) :
 
 n = float(input())
 s = input()
-if s not in "eEoO" or n % 1 != 0 or n < 0 or len(s) != 1 :
+if s not in "eEoO" or n % 1 != 0 or n < 0 or n <= 0 and s in "Oo" or len(s) != 1 or s == "":
     print("ERROR")
 else :
     n = int(n)
     sum = 0
-    if s == "e" or s == "E" :
+    if s in "Ee" :
         for i in range(n+1) :
             if i%2 == 0 :
                 sum += fibo(i)
-    elif s == "o" or s == "O" :
+    else :
         for i in range(n+1) :
             if i%2 == 1 :
                 sum += fibo(i)
