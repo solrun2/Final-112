@@ -1,20 +1,24 @@
 dict = {}
+max = 0
 while True :
-    n = input()
-    if n == "end" :
+    s = input()
+    if s == "end" :
         break
-    bid = n.split()
-    if bid[0] not in dict :
-        dict[bid[0]] = [(bid[1]),1]
     else :
-        if bid[1] > dict[bid[0]][0] :
-            dict[bid[0]] = [(bid[1]),dict[bid[0]][1]+1]
+        s = s.split()
+    if s[0] not in dict :
+        dict[s[0]] = [s[1],1]
+    else :
+        dict[s[0]][1] += 1
+        if float(dict[s[0]][0]) < float(s[1]) :
+            dict[s[0]][0] = s[1]
+    if float(s[1]) > max :
+        max = float(s[1])
+        winner = s[0]
 orderDict = sorted(dict)
 for i in orderDict :
     if dict[i][1] == 1 :
         print("{} bid at the price of {:.1f} baht in 1 time.".format(i,float(dict[i][0])))
     else :
         print("{} bid at the price of {:.1f} baht in {} times.".format(i,float(dict[i][0]),dict[i][1]))
-    if float(dict[i][0]) == max(float(dict[j][0]) for j in orderDict) :
-        winner = i
 print("The winner is {}.".format(winner))
